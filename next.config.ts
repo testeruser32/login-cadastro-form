@@ -1,9 +1,18 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   webpack(config) {
     config.module.rules.push({
-      test: /\.node$/,
-      use: 'node-loader',
+      test: /\.(md|LICENSE)$/,
+      use: 'ignore-loader'
     });
+
+    config.module.rules.push({
+      test: /\.node$/,
+      use: 'node-loader'
+    });
+
     return config;
-  },
+  }
 };
+
+module.exports = nextConfig;

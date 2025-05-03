@@ -1,10 +1,9 @@
 module.exports = {
-  webpack: (config, { isServer }) => {
+  webpack(config) {
     config.module.rules.push({
-      test: /\.md$/,
-      use: 'raw-loader',
+      test: /\.node$/,
+      use: 'node-loader',
     });
-
     return config;
   },
 };

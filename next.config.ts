@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+module.exports = {
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: 'raw-loader',
+    });
 
-const nextConfig: NextConfig = {
-  /* config options here */
+    return config;
+  },
 };
-
-export default nextConfig;

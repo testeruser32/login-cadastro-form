@@ -10,11 +10,11 @@ const databaseUrl = process.env.TURSO_DATABASE_URL;
 const authToken = process.env.TURSO_AUTH_TOKEN;
 
 if (!databaseUrl) {
-  throw new Error("TURSO_DATABASE_URL environment variable is not defined.");
+  throw new Error("TURSO_DATABASE_URL is not defined");
 }
 
 if (!authToken) {
-  throw new Error("TURSO_AUTH_TOKEN environment variable is not defined.");
+  throw new Error("TURSO_AUTH_TOKEN is not defined");
 }
 
 const libsql = createClient({
@@ -22,7 +22,7 @@ const libsql = createClient({
   authToken: authToken,
 });
 
-// ✅ Passar um objeto de configuração corretamente
+// Requer versão >= 0.5.0 do @prisma/adapter-libsql
 const adapter = new PrismaLibSQL({ client: libsql });
 
 const db = globalThis.prisma || new PrismaClient({ adapter });

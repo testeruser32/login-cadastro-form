@@ -1,3 +1,4 @@
+{/*
 import { PrismaClient } from "@prisma/client";
 import { PrismaLibSQL } from "@prisma/adapter-libsql";
 import { createClient } from "@libsql/client";
@@ -32,9 +33,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default db;
+*/}
 
-{/*
-    import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import { PrismaLibSQL } from "@prisma/adapter-libsql";
 import { createClient } from "@libsql/client";
 
@@ -57,4 +58,4 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default db;
-    */}
+    
